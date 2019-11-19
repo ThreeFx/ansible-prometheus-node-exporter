@@ -1,0 +1,9 @@
+# {{ ansible_managed }}
+
+frontend node-exporter-frontend
+    bind :::9001 v4v6 ssl crt /etc/haproxy/prometheus-client.pem ca-file /etc/haproxy/prometheus-ca.pem verify required
+    mode http
+    default_backend node-exporter-backend
+
+backend node-exporter-backend
+    server local localhost:{{ prometheus_node_exporter_port }}

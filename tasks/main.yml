@@ -1,0 +1,19 @@
+---
+- name: Install prometheus node exporter
+  become: True
+  apt:
+    name: prometheus-node-exporter
+
+- name: Configure prometheus-node-exporter
+  become: True
+  template:
+    src: prometheus-node-exporter.j2
+    dest: /etc/default/prometheus-node-exporter
+  notify: restart prometheus-node-exporter
+
+- name: Configure haproxy
+  become: True
+  template:
+    src: haproxy.conf.j2
+    dest: /etc/haproxy/conf.d/51-prometheus-node-exporter.conf
+  notify: restart haproxy
