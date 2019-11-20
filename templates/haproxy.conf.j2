@@ -8,4 +8,4 @@ frontend node-exporter-frontend
 backend node-exporter-backend
     option httpchk get /metrics
     http-check expect status 200
-    server local localhost:9100 check
+    server local localhost:9100 check inter 15s
