@@ -3,6 +3,7 @@
   become: True
   apt:
     name: prometheus-node-exporter
+    install_recommends: no  # This is BLOATED with recommendations
 
 - name: Configure prometheus-node-exporter
   become: True
