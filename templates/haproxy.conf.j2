@@ -1,7 +1,7 @@
 # {{ ansible_managed }}
 
 frontend node-exporter-frontend
-    bind :::9101 v4v6 ssl crt /etc/haproxy/prometheus-client.pem ca-file /etc/haproxy/prometheus-ca.pem verify required
+    bind :::9101 v4v6 ssl crt /etc/haproxy/prometheus-server.pem ca-file /etc/haproxy/prometheus-ca.pem verify required
     mode http
     default_backend node-exporter-backend
 

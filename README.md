@@ -7,7 +7,7 @@ Requirements
 ------------
 
 A TLS server certificate (certificate and key concatenated) placed in
-`/etc/haproxy/prometheus-client.pem`, and the corresponding CA certificate
+`/etc/haproxy/prometheus-server.pem`, and the corresponding CA certificate
 placed in `/etc/haproxy/prometheus-ca.pem`.
 
 Role Variables
